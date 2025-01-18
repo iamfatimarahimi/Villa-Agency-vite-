@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"name": "villa-vite",
+			"path": ".."
+		},
+		{
+			"name": "Images",
+			"path": "../../villa_agency/Images"
+		}
+	],
+	"settings": {
+		"liveServer.settings.port": 5501,
+		"liveServer.settings.multiRootWorkspaceName": "villa-vite"
+	}
+}
