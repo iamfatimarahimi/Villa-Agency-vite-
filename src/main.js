@@ -24,7 +24,7 @@ emblaApi.on("destroy", removePrevNextBtnsClickHandlers);
 emblaApi.on("destroy", removeDotBtnsAndClickHandlers);
 //Navbar scroll
 window.onscroll = function () {
-  const navbar = document.getElementById("mid-sec");
+  const navbar = document.getElementById("navbar");
   if (window.scrollY >= 50) {
     navbar.classList.add("fixed");
   } else {
@@ -32,7 +32,7 @@ window.onscroll = function () {
   }
 };
 // Accordion
-let headerItems = document.querySelectorAll(".accordion-item");
+let headerItems = document.querySelectorAll(".accordion-head");
 function closeAllAccordion(i) {
   headerItems.forEach((item) => {
     if (!(item === i)) {
@@ -53,3 +53,63 @@ for (let i of headerItems) {
     addActiveFunc(i);
   });
 }
+//PAGE CHANGE
+let buttons = document.querySelectorAll(".bulding");
+let buttonsSelected = document.querySelector(".bulding-active");
+// for (let b of buttons) {
+// function addColor(b) {
+//   if (b.classList.contains("bulding-active")) {
+//     b.classList.remove("bulding-active");
+//   } else {
+//     b.classList.add("bulding-active");
+//   }
+// }
+
+// b.addEventListener("click", () => {
+//   // addColor(b);
+//   if (buttonsSelected) {
+//     buttonsSelected.classList.remove("bulding-active");
+//     b.classList.add("bulding-active");
+//   }
+// });
+let Apartment = document.querySelector("#Apartment");
+let Villa = document.querySelector("#Villa");
+let Petnhouse = document.querySelector("#Penthouse");
+function closeAll(b) {
+  buttons.forEach((itemColor) => {
+    if (!(itemColor === b)) {
+      itemColor.classList.remove("bulding-active");
+    }
+  });
+}
+function addActive(b) {
+  if (b.classList.contains("bulding-active")) {
+    b.classList.remove("bulding-active");
+  } else {
+    b.classList.add("bulding-active");
+  }
+}
+function showPage(b) {
+  if (b.id === "bulding1") {
+    Apartment.classList.remove("shown");
+    Villa.classList.add("shown");
+    Petnhouse.classList.add("shown");
+  } else if (b.id === "bulding2") {
+    Villa.classList.remove("shown");
+    Apartment.classList.add("shown");
+    Petnhouse.classList.add("shown");
+  } else if (b.id === "bulding3") {
+    Petnhouse.classList.remove("shown");
+    Apartment.classList.add("shown");
+    Villa.classList.add("shown");
+  }
+  // console.log(b);
+}
+for (let b of buttons) {
+  b.addEventListener("click", () => {
+    closeAll(b);
+    addActive(b);
+    showPage(b);
+  });
+}
+// }
