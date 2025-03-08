@@ -56,22 +56,7 @@ for (let i of headerItems) {
 //PAGE CHANGE
 let buttons = document.querySelectorAll(".bulding");
 let buttonsSelected = document.querySelector(".bulding-active");
-// for (let b of buttons) {
-// function addColor(b) {
-//   if (b.classList.contains("bulding-active")) {
-//     b.classList.remove("bulding-active");
-//   } else {
-//     b.classList.add("bulding-active");
-//   }
-// }
 
-// b.addEventListener("click", () => {
-//   // addColor(b);
-//   if (buttonsSelected) {
-//     buttonsSelected.classList.remove("bulding-active");
-//     b.classList.add("bulding-active");
-//   }
-// });
 let Apartment = document.querySelector("#Apartment");
 let Villa = document.querySelector("#Villa");
 let Petnhouse = document.querySelector("#Penthouse");
